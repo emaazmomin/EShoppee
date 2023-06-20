@@ -1,0 +1,70 @@
+<div *ngIf="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Email already registered! </strong>Please login to continue 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="ok()"></button>
+</div>
+
+<div *ngIf="emailalert" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Please enter email! </strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="ok()"></button>
+</div>
+
+<div *ngIf="passalert" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Please enter password! </strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="ok()"></button>
+</div>
+
+<div *ngIf="invalid" class="alert alert-danger alert-dismissible fade show" role="alert">
+    <strong>Invalid credentials! </strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="ok()"></button>
+</div>
+
+
+<div *ngIf="!login" class="signup container mt-3">
+    <h2 class="text-center">Seller Sign Up</h2>
+    <form #sellerSignup="ngForm" (ngSubmit)="signupData(sellerSignup.value)">
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" ngModel placeholder="Full Name" name="fname" #name="ngModel"
+                required>
+            <span class="text-red" *ngIf="name.invalid && name.touched">Required</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" ngModel placeholder="name@gmail.com" name="email" #email="ngModel" required (blur)="checkexistance(sellerSignup.value)">
+            <span class="text-red" *ngIf="email.invalid && email.touched">Required</span>
+            <span class="text-red" *ngIf="exist">Email already registered</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="password" class="form-control" placeholder="Password" ngModel name="password" minlength="8"
+                maxlength="20" #pass="ngModel" required (keyup)="keyUp(pass.value)">
+            <span *ngIf="pass.touched && !typing" class="text-red">Required</span>
+            <span class="text-red" *ngIf="!lengthSatisfied && pass.dirty">Minimum 8 characters are required</span>
+        </div>
+
+        <button class="btn btn-outline-info" [disabled]="sellerSignup.invalid">Sign Up</button>
+        <button type="button" class="btn btn-light" (click)="showLogin()">Already registered? Login</button>
+    </form>
+</div>
+
+
+<div *ngIf="login" class="login container mt-3">
+    <h2 class="text-center">Seller Login</h2>
+    <form #sellerLogin="ngForm" (ngSubmit)="loginData(sellerLogin.value)">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" ngModel placeholder="name@gmail.com" name="email" #email="ngModel">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="password" class="form-control" placeholder="Password" ngModel name="password" #password="ngModel">
+        </div>
+
+        <button class="btn btn-outline-info">Login</button>
+        <button type="button" class="btn btn-light" (click)="showSignup()">Already registered? Login</button>
+    </form>
+</div>

@@ -1,0 +1,11 @@
+.none{
+    display: none;
+}
+.table{
+    /* border:2px solid black; */
+}
+.addProductBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

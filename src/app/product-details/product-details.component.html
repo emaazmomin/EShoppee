@@ -1,0 +1,72 @@
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Added To Cart!</strong> You can go to checkout cart now
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div *ngIf="notselected" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Please select size and colour!</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+</div>
+
+
+<div class="item-details" *ngIf="productDetails">
+    <input type="hidden" #id value="{{productDetails.pid}}">
+    <div class="p-img">
+        <img src="{{productDetails.url}}" class="image" alt="">
+    </div>
+    <div class="p-details">
+        <h1 class="">
+            {{productDetails.pname}}
+        </h1>
+        <h5 class="mt-2">
+            {{productDetails.desc}}
+        </h5>
+        <h4 class="mt-5">Price: ₹{{productDetails.price}}/-</h4>
+        <div class="position mt-5">
+            <div class="color my-3">
+                <h4 class="">Colours:</h4>
+                <select *ngIf="productDetails.color" name="" id="select-color" class="select" #colorSelect
+                    (click)="selectValues(colorSelect)">
+                    <option value="color">Colours</option>
+                    <option *ngFor="let color of productDetails.color.split(',')" value="{{color}}">{{color}}</option>
+                    <!-- <option value="blue">Blue</option>
+                    <option value="green">Green</option> -->
+                </select>
+            </div>
+            <div class="size">
+                <h4 *ngIf="productDetails.size" class="">Size:</h4>
+                <select *ngIf="productDetails.size" name="" id="select-size" class="select" #sizeSelect
+                    (click)="selectValues(sizeSelect)">
+                    <option value="size">Sizes</option>
+                    <option *ngFor="let size of productDetails.size.split(',')" value="{{size}}">{{size}}</option>
+                </select>
+            </div>
+            <div class="qty mt-5 d-flex">
+                <h4 class="">Quantity:</h4>
+                <div class="">
+                    <button (click)="Quantity('minus')">-</button>
+                    <input type="text" class="qty-inp" id="qtyinput" value="{{qty}}">
+                    <button (click)="Quantity('plus')">+</button>
+                </div>
+            </div>
+            <div class="btns mt-5">
+                <button *ngIf="!cartAdded" class="btn btn-outline-dark" (click)="addtocart()">ADD TO CART</button>
+                <button *ngIf="cartAdded" class="btn btn-outline-dark" (click)="checkoutcart()">Checkout Cart</button>
+                <button class="mx-2 btn btn-dark">BUY NOW</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="hideAnim" [class.load-body]="showAnim">
+    <div class="outer">
+    </div>
+</div>
+
+<div *ngIf="noData" class="not-found">
+    <h1 class="text-center">Unbale to fetch product details</h1>
+</div>
+<div *ngIf="!online" class="not-found">
+    <h1 class="text-center p-5">Please check internet connection or Retry after sometime</h1>
+</div>
+<app-footer></app-footer>

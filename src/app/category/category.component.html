@@ -1,0 +1,16 @@
+<h2 class="text-center mt-3" *ngIf="categoryProducts">#{{categoryProducts[0].category}}</h2>
+<div class="products-display mt-3" *ngIf="categoryProducts">
+  <div class="items" *ngFor="let plists of categoryProducts">
+    <a class="text-black text-decoration-none" routerLink="/details/{{plists.pid}}">
+      <!-- <input type="hidden" name="" value=""> -->
+      <div class="item-image"><img src="{{plists.url}}">
+      </div>
+      <div class="item-name">
+        <h5 class="text-center">{{plists.pname | slice:0:20}}</h5>
+      </div>
+      <div class="item-price">
+        <h5 class="text-center">Rs:{{plists.price}}/-</h5>
+      </div>
+    </a>
+  </div>
+</div>

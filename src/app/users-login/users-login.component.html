@@ -1,0 +1,58 @@
+<div *ngIf="!verified" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Incorrect Username or Password!</strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="verify()"></button>
+</div>
+
+<div *ngIf="registered" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Registered Successfully. </strong>Please Login to continue 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="registeredDone()"></button>
+</div>
+
+<div *ngIf="regError" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Please fill all details </strong> 
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="registeredDone()"></button>
+</div>
+
+
+<div *ngIf="!login" class="signup container mt-3">
+    <h2 class="text-center">User Sign Up</h2>
+    <form #userSignup="ngForm" (ngSubmit)="signupData(userSignup.value)">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" ngModel placeholder="Full Name" name="fname">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" ngModel placeholder="name@gmail.com" name="email" #emailReg (blur)="getKey(userSignup.value)" (click)="reset()">
+            <span class="hide" [class.show]="show">Email already registered!</span>
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" placeholder="Password" ngModel name="password">
+        </div>
+
+        <button class="btn btn-outline-info">Sign Up</button>
+        <button type="button" class="btn btn-light" (click)="showLogin()">Already registered? Login</button>
+    </form>
+</div>
+
+
+<div *ngIf="login" class="login container mt-3">
+    <h2 class="text-center">User Login</h2>
+    <form #userLogin="ngForm" (ngSubmit)="loginData(userLogin.value)">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" ngModel placeholder="name@gmail.com" name="email">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="password" class="form-control" placeholder="Password" ngModel name="password">
+        </div>
+
+        <button class="btn btn-outline-info">Login</button>
+        <button type="button" class="btn btn-light" [class.active]="isActive" (click)="showSignup()">Not registered? Sign Up</button>
+    </form>
+</div>

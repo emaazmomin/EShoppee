@@ -1,0 +1,109 @@
+<i class="fa fa-search"></i>
+
+<nav *ngIf="!userLoggedin && !SellerLoggedin">
+  <div class="logo"><a routerLink="" class="text-white text-decoration-none">E-Shoppee</a></div>
+  <div class="search">
+    <input #inpsearch (keyup)="searchSuggestion($event)" (blur)="  hideSuggestion($event)" class="form-control me-2"
+      type="search" placeholder="Search" aria-label="Search" value="">
+    <button type="submit" class="btn btn-outline-light" (click)="searchProduct(inpsearch.value)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+        viewBox="0 0 16 16">
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg></button>
+    <div class="search-suggestions" *ngIf="search">
+      <select #suggestion (click)="suggestedsearch(suggestion)" class="form-select"  multiple>
+        <option class="border"  *ngFor="let items of searchList" value="{{items.pname}}">{{items.pname | slice:0:50}}</option>
+      </select>
+    </div>
+  </div>
+  <ul class="menu mt-2">
+    <li><a routerLink="" (click)="navHome()">Home</a></li>
+    <li><a routerLink="cart" (click)="navCart()">Cart({{localcartQty}})</a></li>
+    <li>
+      <select id="category" #cat class="" (click)="clicked(cat)">
+        <option value="Categories">Categories</option>
+        <option *ngFor="let lists of categories" value="{{lists}}">{{lists}}</option>
+      </select>
+    </li>
+    <li><a routerLink="seller" (click)="navSeller()">Seller</a></li>
+    <li><a routerLink="user-login" (click)="navuserLogin()">Login</a></li>
+  </ul>
+  <div class="burger" (click)="burgerMenu($event)">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+<nav *ngIf="userLoggedin">
+  <div class="logo"><a routerLink="" class="text-white text-decoration-none">E-Shoppee</a></div>
+  <div class="search">
+    <input #inpsearch (keyup)="searchSuggestion($event)" (blur)="hideSuggestion($event)" class="form-control me-2"
+      type="search" placeholder="Search" aria-label="Search" value="">
+    <button type="submit" class="btn btn-outline-light" (click)="searchProduct(inpsearch.value)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+        viewBox="0 0 16 16">
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg></button>
+    <!-- <div class="search-suggestions" *ngIf=""> -->
+      <div class="search-suggestions" *ngIf="search">
+      <!-- <ul class="text-black">
+        <li *ngFor="let items of searchList" (mouseup)="suggestionsearch(items.pname)">{{items.pname | slice:0:50}}</li>
+      </ul> -->
+      <select #suggestion (click)="suggestedsearch(suggestion)" class="form-select"  multiple>
+        <option class="border"  *ngFor="let items of searchList" value="{{items.pname}}">{{items.pname | slice:0:50}}</option>
+      </select>
+    </div>
+  </div>
+  <ul class="menu mt-2">
+    <li><a routerLink="" (click)="navHome()">Home</a></li>
+    <li><a routerLink="cart" (click)="navCart()">Cart({{cartQty}})</a></li>
+    <li><a routerLink="" (click)="navMyorders()">My Orders</a></li>
+    <li>
+      <select id="category" #cat class="" (click)="clicked(cat)">
+        <option value="Categories">Categories</option>
+        <option *ngFor="let lists of categories" value="{{lists}}">{{lists}}</option>
+      </select>
+    </li>
+    <li><a (click)="logout('user')">Logout</a></li>
+  </ul>
+  <div class="burger" (click)="burgerMenu($event)">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+
+
+<nav *ngIf="SellerLoggedin">
+  <div class="logo"><a routerLink="" class="text-white text-decoration-none">E-Shoppee</a></div>
+  <div class="search">
+    <input #inpsearch (keyup)="searchSuggestion($event)" (blur)="hideSuggestion($event)" class="form-control me-2"
+      type="search" placeholder="Search" aria-label="Search" value="">
+    <button type="submit" class="btn btn-outline-light" (click)="searchProduct(inpsearch.value)">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+        viewBox="0 0 16 16">
+        <path
+          d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+      </svg></button>
+    <div class="search-suggestions" *ngIf="search">
+      <select #suggestion (click)="suggestedsearch(suggestion)" class="form-select"  multiple>
+        <option class="border"  *ngFor="let items of searchList" value="{{items.pname}}">{{items.pname | slice:0:50}}</option>
+      </select>
+    </div>
+  </div>
+  <ul class="menu mt-2">
+    <li><a routerLink="seller-products" (click)="navMyprods()">My Products</a></li>
+    <li><a routerLink="seller-dashboard" (click)="navDash()">Dashboard</a></li>
+    <!-- <li><a routerLink="">Orders</a></li> -->
+    <li><a (click)="logout('seller')">Logout</a></li>
+  </ul>
+  <div class="burger" (click)="burgerMenu($event)">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+</nav>
+<router-outlet></router-outlet>

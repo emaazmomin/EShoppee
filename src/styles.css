@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+/* Products display css */
+.products-display{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+.items{
+    width: 80%;
+    border: 1px solid rgb(212, 210, 210);
+    border-radius: 10px;
+    margin: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    text-align: center;
+    height: 294px;
+}
+.item-image img{
+    object-fit: contain;
+    width: 100%;
+    height: 188px;
+    padding: 10px 10px;
+}
+.item-price{
+    border-top: 1px solid rgb(212, 210, 210);
+    width: 100%;
+    margin-bottom: 0px;
+    padding: 10px;
+}
+.item-name{
+    border-top:1px solid rgb(212, 210, 210);
+    width: 100%;
+    padding: 10px;
+}
+.items:hover{
+    /* background-color: antiquewhite; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+
+
+
+.carousel-indicators{
+    background-color: #00000061;
+    /* width: 100%;
+    margin-left: 0px;
+    margin-right: 0px; */
+}
+.d-block{
+    object-fit: contain;
+    height: 494px;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: black;
+}
+#carouselExampleIndicators{
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+.carousel-caption{
+    background-color: #00000061;
+}
+
+@media only screen and (max-width:920px) and (min-width: 696px) {
+    .products-display{
+        grid-template-columns: auto auto auto;
+    }
+    
+}
+@media only screen and (max-width:696px) {
+    .products-display{
+        grid-template-columns: auto auto;
+    }
+    .items{
+        height: 312px;
+    }
+    
+}
+
+/* Loading Animation */
+.hideAnim{
+    display: none;
+}
+.load-body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.outer {
+    border: 4px solid rgb(255, 255, 255);
+    border-top: 4px solid rgba(0, 0, 0, 0.553);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }

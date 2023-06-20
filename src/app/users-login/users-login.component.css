@@ -1,0 +1,11 @@
+.btn.active{
+   background-color: rgb(223, 185, 185);
+   font-weight: bolder;
+}
+.hide{
+   display: none;
+}
+.show{
+   display: block;
+   color: red;
+}

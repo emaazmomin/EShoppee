@@ -1,0 +1,233 @@
+<div *ngIf="added" class="alert alert-success" role="alert">
+  Product added successfully
+</div>
+
+<div *ngIf="updated" class="alert alert-info" role="alert">
+  Product details updated successfully
+</div>
+
+<div *ngIf="deleted" class="alert alert-secondary" role="alert">
+  Product deleted!
+</div>
+
+<div class="mt-2">
+  <h2 class="text-center mt-3">My Products</h2>
+  <div class="table container mt-5">
+    <table class="table">
+      <thead>
+        <tr>
+          <!-- <th scope="col">Sno</th> -->
+          <th scope="col">Image</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Update</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let products of listOfProducts">
+          <!-- <th scope="row">{{products}}</th> -->
+          <td><img src="{{ products.url }}" width="100px" height="100px" /></td>
+          <td>{{ products.pname }}</td>
+          <td>{{ products.desc }}</td>
+          <td>{{ products.price }}</td>
+          <td>
+            <button
+              class="btn btn-outline-primary"
+              (click)="updateItem(products)"
+            >
+              Update
+            </button>
+          </td>
+          <td>
+            <button
+              class="btn btn-outline-danger"
+              (click)="deleteItem(products)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+        <!-- <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr> -->
+      </tbody>
+    </table>
+  </div>
+  <div class="addProductBtn mb-5">
+    <a
+      class="btn btn-outline-success"
+      (click)="addproductbtn()"
+      [ngClass]="{none}"
+      >Add New Products</a
+    >
+  </div>
+</div>
+
+<!-- TO ADD PRODUCTS -->
+<div *ngIf="addproducts" class="container">
+  <h2 class="text-center">Add Product</h2>
+  <form #addProducts="ngForm" (ngSubmit)="addProds(addProducts.value)">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Product Name</label
+      >
+      <input
+        ngModel
+        type="email"
+        class="form-control"
+        id="p-name"
+        placeholder="Ex. Iphone 14 pro"
+        name="pname"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Category</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        id="p-category"
+        placeholder="Ex. Mobile"
+        name="category"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Colour</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        id="p-color"
+        placeholder="Ex. Green"
+        name="color"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Size</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        id="p-size"
+        placeholder="Ex. XL"
+        name="size"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input
+        ngModel
+        type="email"
+        class="form-control"
+        id="p-price"
+        placeholder="Ex. 120000 Rs"
+        name="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Description</label
+      >
+      <input
+        ngModel
+        type="email"
+        class="form-control"
+        id="p-desc"
+        placeholder="Ex.Presenting all new Iphone 14 pro"
+        name="desc"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Images</label>
+      <input
+        ngModel
+        type="text"
+        class="form-control"
+        id="p-img"
+        placeholder="image url"
+        name="url"
+      />
+    </div>
+    <button class="btn btn-success mx-2 mb-5">ADD</button>
+    <button class="btn btn-dark mb-5" (click)="done()">DONE</button>
+  </form>
+</div>
+
+<!-- TO UPDATE PRODUCTS -->
+<div *ngIf="updateproducts" class="container">
+  <h2 class="text-center">Update Product</h2>
+  <form #updateProducts="ngForm" (ngSubmit)="updateProds(updateProducts.value)">
+    <input type="hidden" name="id" ngModel="{{ updateThisItem.pid }}" />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Product Name</label
+      >
+      <input
+        ngModel="{{ updateThisItem.pname }}"
+        type="email"
+        class="form-control"
+        id="p-name"
+        placeholder="Ex. Iphone 14 pro"
+        name="pname"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Category</label>
+      <input
+        ngModel="{{ updateThisItem.category }}"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Ex. Mobile"
+        name="category"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input
+        ngModel="{{ updateThisItem.price }}"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Ex. 120000 Rs"
+        name="price"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Description</label
+      >
+      <input
+        ngModel="{{ updateThisItem.desc }}"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="Ex.Presenting all new Iphone 14 pro"
+        name="desc"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Images</label>
+      <input
+        ngModel="{{ updateThisItem.url }}"
+        type="email"
+        class="form-control"
+        id="exampleFormControlInput1"
+        placeholder="image url"
+        name="url"
+      />
+    </div>
+    <button class="btn btn-success mx-2 mb-5">UPDATE</button>
+    <button class="btn btn-dark mb-5" (click)="done()">DONE</button>
+  </form>
+</div>

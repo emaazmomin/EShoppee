@@ -1,0 +1,56 @@
+<div *ngIf="updated" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Product quantity is updated</strong>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div *ngIf="failed" class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Failed to update quantity!</strong>Please try again later
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" (click)="close()"></button>
+</div>
+
+<div class=" mt-2" *ngIf="!emptyCart">
+    <h2 class="text-center mt-3">My Products</h2>
+    <div class="table container mt-5">
+      <table  class="table">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Details</th>
+            <th scope="col">Price</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of Cartproducts">   
+            <td>
+            <a routerLink="/details/{{items.pid}}">
+                <img src="{{items.url}}" width="100px" height="100px">
+              </a>
+            </td>
+              <td>
+                <div><span><b>Quantity:</b></span> 
+                  <div class="">
+                      <button (click)="Quantity('minus',items)">-</button>
+                      <input type="text" class="qty-inp text-center" id="qtyinput" value="{{items.quantity}}" style="width: 21%;">
+                      <button (click)="Quantity('plus',items)">+</button>
+                  </div>
+              <!-- </div> -->
+                </div>
+                <div><span><b>Color:</b></span>{{items.color}}
+                </div>
+                </td>
+              <td>₹{{items.price}}/-</td>
+              <td><button class="btn btn-outline-danger" (click)="deleteItem(items)">Delete</button></td>
+          </tr>
+          <tr *ngIf="" class="end-coloumn">
+            <td colspan="2"><b>Total</b></td>
+            <td>₹{{total}}/-</td>
+            <td><button class="btn btn-success">Checkout</button></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <div *ngIf="emptyCart">
+      <h2 class="text-center">Your cart is empty</h2>
+    </div>

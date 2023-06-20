@@ -1,0 +1,277 @@
+{
+  "sellerData": [
+    {
+      "fname": "Momin Md Emaz1",
+      "email": "mominemaz@gmail.com",
+      "password": "y",
+      "id": 34
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "1",
+      "id": 35
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 36
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 37
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 38
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 39
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 40
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 41
+    }
+  ],
+  "productsData": [
+    {
+      "id": 3,
+      "pname": "Samsung Galaxy F22",
+      "category": "Mobile",
+      "price": "15000",
+      "desc": "4GB/64GB & 8GB/128GB",
+      "url": "https://th.bing.com/th/id/OIP.8WB3jn-JQ2nPBvbOc7eOCQHaHn?pid=ImgDet&rs=1"
+    },
+    {
+      "pname": "Redmi 11",
+      "category": "Mobile",
+      "price": "15000",
+      "desc": "6GB+128GB 6.43 FHD+ AMOLED DotDisplay 5000mAh (typ) battery* 50MP wide camera",
+      "url": "https://th.bing.com/th/id/OIP.-zRJ57QWFMPsybfUvetAugAAAA?pid=ImgDet&w=470&h=470&rs=1",
+      "id": 4
+    },
+    {
+      "pname": "Redmi 11",
+      "category": "Mobile",
+      "price": "10000",
+      "desc": "33W Pro fast charging with 5000mAh massive battery Charge to 100% in around an hour",
+      "url": "https://cdn.shopify.com/s/files/1/0912/2482/products/1000073525-1_1024x1024.jpg?v=1625305186",
+      "id": 5
+    },
+    {
+      "id": 6,
+      "pname": "HP Laptop",
+      "category": "Laptop",
+      "price": "50000",
+      "desc": "Windows 10 Home, 15.6(35.56 cm) FHD IPS, micro-edge Display, 11th Gen Intel Core i3 Processor",
+      "url": "https://d2xamzlzrdbdbn.cloudfront.net/products/ef31350b-6d4f-46ff-90fe-110766e596c221121125.jpg"
+    },
+    {
+      "pname": "HP Pavillion Aero",
+      "category": "Laptop",
+      "price": "60000",
+      "desc": "15.6(35.56 cm) FHD IPS, micro-edge Display, 10th Gen Intel Core i5 Processor, 8 GB RAM",
+      "url": "https://th.bing.com/th?id=OPA.xCE48J8lT0NOZA474C474&w=592&h=550&o=5&pid=21.1",
+      "id": 7
+    },
+    {
+      "pname": "SONY Alpha ILCE-6100L APS-C Mirrorless Camera with 16-50 mm Power Zoom Lens Featuring Eye AF and 4K movie recording  (Black)",
+      "category": "Camera",
+      "price": "66,990",
+      "desc": "High-resolution 4K movie recording, Choose your own shooting style, Self-framing made easy, Flexible low-angle shooting, Convenient Touch Tracking and Touch Focus features, Cleaner images in dimly lit settings, Superior image resolution and natural-looking textures, Uncompromising image quality, Real-time Tracking, Persistent tracking at high speed, NFC & Bluetooth",
+      "url": "https://rukminim1.flixcart.com/image/416/416/knyxqq80/dslr-camera/r/y/x/digital-camera-eos-m50-mark-ii-eos-m50-mark-ii-canon-original-imag2gzkexzqhyhu.jpeg?q=70",
+      "id": 8
+    }
+  ],
+  "userData": [
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "1",
+      "id": 1
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "21",
+      "id": 2
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "1",
+      "id": 3
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 4
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 5
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 6
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 7
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 8
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 9
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 10
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 11
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 12
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 13
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 14
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 15
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 16
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 17
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 18
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 19
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "h",
+      "id": 20
+    },
+    {
+      "fname": "Arbina Ishtiyaque Ahmad Momin",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 21
+    },
+    {
+      "fname": "Arbina Ishtiyaque Ahmad Momin",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 22
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 23
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 24
+    },
+    {
+      "fname": "",
+      "email": "",
+      "password": "",
+      "id": 25
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 26
+    },
+    {
+      "fname": "Momin Md Emaaz",
+      "email": "mominemaz@gmail.com",
+      "password": "",
+      "id": 27
+    }
+  ],
+  "userCart": [
+    {
+      "id": 3,
+      "pname": "Samsung Galaxy F22",
+      "category": "Mobile",
+      "price": "15000",
+      "desc": "4GB/64GB & 8GB/128GB",
+      "url": "https://th.bing.com/th/id/OIP.8WB3jn-JQ2nPBvbOc7eOCQHaHn?pid=ImgDet&rs=1",
+      "quantity": 1
+    }
+  ]
+}

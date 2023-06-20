@@ -1,0 +1,25 @@
+.footer{
+    border: 2px solid black;
+    background-color: black;
+    color: white;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+.footer ul li{
+    margin: 0px 20px;
+} 
+.footer ul li:hover{
+    color: rgb(201, 198, 198);
+} 
+.footer ul{
+    justify-content: center;
+} 
+
+@media only screen and (min-width:350px) and (max-width:700px) {
+    .d-flex{
+        display: block!important;
+    }
+    
+}
